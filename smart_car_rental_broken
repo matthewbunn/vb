@@ -1,0 +1,37 @@
+Option Strict On
+
+Public Class frmcar
+    ' Cost per Car Rental - used in multiple procedures
+    Const _cdecPricePerCarDay As Decimal = 29.99D
+    Const _cdecPricePerCarMiles As Decimal = 0.39D
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles lblTotalCostLabel.Click
+
+    End Sub
+
+    Private Sub frmcar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnCalculate_Click(sender As Object, e As EventArgs) Handles btnCalculate.Click
+        ' This event handler is executed when the user taps or clicks the
+        ' Calculate button. It cldulates and displays the 
+        ' cost of the Car rented (number of miles driven times cost per day)
+
+        Dim strPricePerCarDay As String
+        Dim intPricePerCarDay As Integer
+        Dim strPricePerCarMiles As String
+        Dim intPricePerCarMiles As Integer
+        Dim decTotalCost As Decimal
+
+        strPricePerCarDay = txtPricePerCarDay.Text
+        intPricePerCarDay = Convert.ToInt32(strPricePerCarDay)
+
+        strPricePerCarMiles = txtPricePerCarMiles.Text
+        intPricePerCarMiles = Convert.ToInt32(strPricePerCarMiles)
+
+        decTotalCost = intPricePerCarDay * _cdecPricePerCarDay
+        decTotalCost = intPricePerCarMiles * _cdecPricePerCarMiles
+        lblTotalCost.Text = decTotalCost.ToString("C")
+    End Sub
+End Class
